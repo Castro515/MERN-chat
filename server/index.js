@@ -3,14 +3,12 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const { chats } = require("./data/data");
 const colors = require("colors");
+const { socket } = require("socket.io");
+const cors = require("cors");
+const helmet = require("helmet");
 const chatRoutes = require("./routes/chatRoutes");
 const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messageRoutes");
-const cors = require("cors");
-const helmet = require("helmet");
-
-const { socket } = require("socket.io");
-
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const { PORT, CLIENT_ACCESS_URL } = require("./config/keys");
 
